@@ -1,0 +1,45 @@
+
+<html>
+<head>
+	<title>Color Guessing Game</title>
+</head>
+<body>
+<script type="text/javascript">
+	var color = ["Red", "Green", "Blue", "Pink", "White"];
+	var ans = Math.floor(Math.random()*color.length);
+	var temp;
+	var index;
+	var count = 0;
+
+	color.sort();
+	function check_ans()
+	{
+		index = color.indexOf(temp);
+		if (index == ans) 
+		{
+			myBody=document.getElementsByTagName("body")[0];
+			myBody.style.background=color[ans];
+			return true;
+		}
+		count++;
+		if(index == -1) alert("Please guess something from the list");
+		else if (index > ans) 
+			{alert("Guess something with smaller alphabetical order");}
+		else if (index < ans) 
+			{alert("Guess something with higher alphabetical order");}
+		return false;
+	}
+	function do_game()
+	{
+		alert(color[ans]);
+		do
+		{
+			temp = prompt("Guess my color, it's one of the following color: " + color);
+		}while(check_ans()==false);
+		alert("Goob job! You guessed " + (count+1) + " time(s)");
+	}
+	do_game();
+
+</script>
+</body>
+</html>

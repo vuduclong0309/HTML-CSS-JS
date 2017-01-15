@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head> 
+	<title> Dating information page </title>
+	<style>
+		fieldset 
+		{
+			background: lightyellow;
+			border: 10px solid yellow;
+			margin-bottom: 10px;
+			width: 720px;
+		}
+
+		label
+		{
+			width: 180px;
+			display: inline-block;
+			text-align = "right";
+			text-align = "top";
+		}
+		textarea
+		{
+			width: 360px;
+			height: 50px; 
+		}
+		input[type = "checkbox"] + label
+		{
+			width: auto;
+		}
+		input[type = "radio"] + label
+		{
+			width: auto;
+		}
+		span[id="min"]
+		{
+			display: inline-block;
+			width: 100px;
+			background: red;
+			color: white;
+			text-align: center;
+		}
+		span[id="max"]
+		{
+			display: inline-block;
+			width: 100px;
+			background: green;
+			color: white;
+			text-align: center;
+		}
+		
+	</style>
+</head>
+
+
+<body> 
+	<h1> <i> Please enter information for our dating website! </i> </h1>
+	<form method = "post" action = "https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data">
+		<fieldset class = "fset">
+			<legend>Your Face</legend>
+			<label for="photo">Your image: </label>
+			<input type = "file" name = "photo" id = "photo" required> <br>
+			<label> Image preview:</label>
+			<img id = "preview">
+		</fieldset>
+
+		<fieldset>
+			<legend>Your General Details</legend>
+			<label for = "name" >Name:</label> 
+			<input type = "text" name = "name" id = "name" required> <br>
+			<label>Gender:</label> 
+			<input type = "radio" name = "gender" value = "male" id="male" required> 
+			<label for ="male">Male</label>
+			<input type = "radio" name = "gender" value = "female" id = "female" required> 
+			<label for ="female">Female</label> <br>
+			<label for = "age">Age:</label>
+			<input type = "number" name = "age" value = "age" id = "age" required> <br>
+			<label for = "birth">Date of birth: </label>
+			<input type = "date" id = "birth" value = "birth" required> <br>
+			<label for = "color">Favorite Color: </label>
+		    <input type = "color" id = "color" required> <br>
+			<label for = "country"> Which country?</label>  
+			<select id = "country" required>
+				<option value = "00"> 		</option>
+				<option value = "us" name = "cty" required> United State </option>
+				<option value = "uk" name = "cty" required> United Kingdom </option>
+				<option value = "cn" name = "cty" required> China </option>
+				<option value = "ca" name = "cty" required> Canada </option>
+				<option value = "sg" name = "cty" required> Singapore </option>
+			</select>
+		</fieldset>
+
+		<fieldset>
+			<legend> Your Indicators</legend>
+			<label for = "he">Height: </label>
+			<span id = "min"> Short </span> 
+			<input type = "range" name = "he" min = "0" max = "100" id = "he"> 
+			<span id = "max"> Tall </span><br>
+			<label for = "sa">Salary: </label>
+			<span id = "min"> Poor </span>
+			<input type = "range" name = "sa" id = "sa" min = "0" max = "100"> 
+			<span id = "max"> Rich </span> 
+		</fieldset>
+
+		<fieldset>
+			<legend>Contact Information</legend>
+				<label for = "eid">Email: </label>
+				<input type = "email" name = "eid" id ="eid" required> <br>
+				<label for = "telephone">Mobile:</label>
+				<input type = "tel" name = "telephone" id = "telephone" required> <br>
+				<label for = "home">Address: </label>
+				<textarea name = "home" id = "home" required>
+				</textarea> <br>
+				<label>Method to contact you: </label>
+				<input type = "checkbox" id = "em" name = "cont">
+				<label for "em">Email: </label>
+				<input type = "checkbox" id = "wa" name = "cont">
+				<label for = "wa">Whatsapp: </label>
+				<input type = "checkbox" id = "iap" name = "cont">
+				<label for = "iap">In-app chat </label>
+		</fieldset>
+		<input type = "submit" value = "Done!" id = "sub">
+	</form>
+</body>
+
+</html>

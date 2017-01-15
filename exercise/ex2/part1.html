@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Guessing Game</title>
+</head>
+<script type="text/javascript">
+	var color = ["Red", "Green", "Blue", "Pink", "White"];
+	var ans = Math.floor(Math.random()*3);
+	var temp;
+
+	color.sort();
+
+	function do_game()
+	{
+		alert(color[ans]);
+		ans = color[Math.floor(ans)];
+		do
+		{
+			temp = prompt("Guess my color, it's one of the following color: " + color);
+		}while(temp != ans);
+	}
+	do_game();
+
+</script>
+</html>

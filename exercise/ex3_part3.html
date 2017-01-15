@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Color Matching Game</title>
+	<style>
+	div
+	{
+		position: absolute;
+		width : 500px;
+		height : 500px;
+	}
+	#rightside
+	{
+		left: 500px;
+		border-left: 1px solid black;
+	}
+	img
+	{
+		position: absolute;
+	}
+	</style>
+</head>
+
+<body>
+<h1>A fun matching quiz</h1>
+<div id = "leftside"> </div>
+<div id = "rightside"></div>
+</body>
+
+<script type="text/javascript">
+	var theleftside = document.getElementById("leftside");
+	var numberofFace = 5;
+	var rightside = document.getElementById("rightside");
+	var h=100, t, l;
+	function generateFaces()
+	{
+		for(var i = 1; i <= numberofFace; i++)
+		{
+			var img = document.createElement("img");
+			img.setAttribute("src","http://home.cse.ust.hk/~rossiter/mooc/matching_game/smile.png");
+			t = Math.floor(Math.random()*400)+"px";
+			l = Math.floor(Math.random()*400)+"px";
+			img.height = h;
+			img.style.top = t;
+			img.style.left = l;
+			theleftside.appendChild(img);
+		}
+		var imag = theleftside.cloneNode(true);
+		imag.removeChild(imag.lastChild);
+		rightside.appendChild(imag);
+	}
+	generateFaces();
+
+</script>
+
+</html>
